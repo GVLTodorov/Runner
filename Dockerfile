@@ -4,9 +4,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV RUNNER_VERSION=2.281.0
 ENV TZ=Europe/Sofia
 
-ENV PUID=1000
-ENV PGID=1000
-
 RUN apt-get update -y && apt-get upgrade -y && useradd -m docker
 
 RUN apt-get install -y --no-install-recommends curl jq build-essential libssl-dev libffi-dev python3 python3-venv python3-dev
@@ -24,7 +21,5 @@ RUN chmod +x entrypoint.sh
 RUN curl -fsSL https://get.docker.com -o get-docker.sh
 RUN chmod +x get-docker.sh
 RUN sh get-docker.sh
-
-USER ${PGID}
 
 ENTRYPOINT ["./entrypoint.sh"]
