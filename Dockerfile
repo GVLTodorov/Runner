@@ -3,6 +3,7 @@ FROM ubuntu:latest
 ARG DEBIAN_FRONTEND=noninteractive
 ENV RUNNER_VERSION=2.281.0
 ENV TZ=Europe/Sofia
+ENV RUNNER_ALLOW_RUNASROOT=1
 
 RUN apt-get update -y && apt-get upgrade -y && useradd -m docker
 
