@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export RUNNER_ALLOW_RUNASROOT="1"
-
 if [ -z ${TOKEN+x} ]; then
   echo "TOKEN environment variable is not set"
   exit 1
