@@ -11,11 +11,11 @@ RUN apt-get update -y && apt-get upgrade -y
 
 RUN apt-get install -y --no-install-recommends curl jq build-essential libssl-dev libffi-dev python3 python3-venv python3-dev
 
-RUN cd /home/${PUID} && mkdir actions-runner && cd actions-runner \
+RUN mkdir actions-runner && cd actions-runner \
     && curl -O -L https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz \
     && tar xzf ./actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
-RUN chown -R ${PUID} ~${PUID} && /home/docker/actions-runner/bin/installdependencies.sh
+RUN chown -R ${PUID} ~${PUID} && /actions-runner/bin/installdependencies.sh
 
 COPY entrypoint.sh entrypoint.sh
 
