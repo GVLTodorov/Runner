@@ -7,7 +7,7 @@ ENV TZ=Europe/Sofia
 ENV PUID=1000
 ENV PGID=1000
 
-RUN apt-get update -y && apt-get upgrade -y && useradd -m ${PUID}
+RUN apt-get update -y && apt-get upgrade -y
 
 RUN apt-get install -y --no-install-recommends curl jq build-essential libssl-dev libffi-dev python3 python3-venv python3-dev
 
