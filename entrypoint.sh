@@ -10,7 +10,7 @@ if [ -z ${REPOSITORY+x} ]; then
   exit 1
 fi
 
-cd /home/docker/actions-runner
+cd /actions-runner
 
 ./config.sh --url $REPOSITORY --token $TOKEN --name $NAME --labels $LABEL --work ${DIR}
 
