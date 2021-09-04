@@ -19,7 +19,6 @@ COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 RUN curl -fsSL https://get.docker.com -o get-docker.sh
-COPY get-docker.sh get-docker.sh
 RUN chmod +x get-docker.sh
 RUN sh get-docker.sh
 
