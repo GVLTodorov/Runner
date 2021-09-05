@@ -42,8 +42,9 @@ services:
 ![image](https://user-images.githubusercontent.com/51453974/131748931-e7c32263-e146-4bee-85dc-7db6e53757c2.png)
 
 # Usage
-
-
+```
+runs-on: self-hosted
+```
 
 ```
 name: Default
