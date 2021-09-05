@@ -2,7 +2,7 @@
 Ubuntu Image with GitHub Action used for self-hosted runners
 
 # Purpose
-Used to build and host your own build agents for github action.
+Used to build and host your own agents for github action.
 
 # Requirements
  1. GitHub Repository URL
