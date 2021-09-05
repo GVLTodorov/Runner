@@ -41,3 +41,25 @@ services:
 
 ![image](https://user-images.githubusercontent.com/51453974/131748931-e7c32263-e146-4bee-85dc-7db6e53757c2.png)
 
+# Usage
+
+
+
+```
+name: Default
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.17.6'
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
+```
