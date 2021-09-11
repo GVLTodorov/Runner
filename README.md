@@ -27,6 +27,8 @@ services:
     container_name: runner
     restart: unless-stopped
     environment:
+       - PUID=1000
+       - PGID=1000
        - REPOSITORY= https://github.com/####
        - TOKEN= ####
        - NAME= Agent #optional
@@ -39,7 +41,7 @@ services:
 
 ![image](https://user-images.githubusercontent.com/51453974/131748931-e7c32263-e146-4bee-85dc-7db6e53757c2.png)
 
-# Usage
+# YML Example
 ```
 runs-on: self-hosted
 ```
