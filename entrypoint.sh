@@ -34,7 +34,6 @@ RTOKEN="$(curl -XPOST -fsSL \
 | jq -r '.token')"
 
 echo "Successful ..."
-echo "Continue with stuff ..."
 
 echo "Configuring ..."
 cd /home/docker/actions-runner
