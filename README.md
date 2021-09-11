@@ -6,10 +6,8 @@ Used to build and host your own agents for github action.
 
 # Requirements
  1. GitHub Repository URL
- 2. Github Runner Token
+ 2. [Github PAT Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
  
-![image](https://user-images.githubusercontent.com/51453974/131668152-2352ab6d-fe26-42c3-8d54-9669f6fd7b0c.png)
-  
 
 # Build 
 [![Build](https://github.com/GVLTodorov/Runner/actions/workflows/release.yml/badge.svg)](https://github.com/GVLTodorov/Runner/actions/workflows/release.yml)
