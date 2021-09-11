@@ -12,15 +12,16 @@ fi
 
 API_VERSION=v3
 API_HEADER="Accept: application/vnd.github.${API_VERSION}+json"
-AUTH_HEADER="Authorization: token ${TOKEN}"
+AUTH_HEADER="Authorization: Bearer ${TOKEN}"
 
-API=https://api.github.com/repos/
+API=https://api.github.com/repos
 AOO="$(echo "${REPOSITORY}" | cut -d/ -f4)"
 RNAME="$(echo "${REPOSITORY}" | cut -d/ -f5)"
 
 URL="${API}/${AOO}/${RNAME}/actions/runners/registration-token"
 
 echo $URL
+echo $AUTH_HEADER
 
 RTOKEN="$(curl -XPOST -fsSL \
   -H "${AUTH_HEADER}" \
