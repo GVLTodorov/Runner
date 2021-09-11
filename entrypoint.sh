@@ -10,13 +10,21 @@ if [ -z ${REPOSITORY+x} ]; then
   exit 1
 fi
 
+AUTH_HEADER="Authorization: token ${TOKEN}"
+URL=$REPOSITORY/actions/runners/registration-token
+
+RTOKEN="$(curl -XPOST -fsSL \
+  -H "${AUTH_HEADER}" \
+  "${URL}" \
+| jq -r '.token')"
+
 cd /home/docker/actions-runner
 
-./config.sh --url $REPOSITORY --token $TOKEN --name $NAME --labels $LABEL --work ${DIR}
+./config.sh --url $REPOSITORY --token $RTOKEN --name $NAME --labels $LABEL --work ${DIR}
 
 cleanup() {
     echo "Removing runner..."
-    ./config.sh remove --unattended --token ${TOKEN}
+    ./config.sh remove --unattended --token $RTOKEN
 }
 
 trap 'cleanup; exit 130' INT
