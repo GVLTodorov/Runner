@@ -10,6 +10,8 @@ if [ -z ${REPOSITORY+x} ]; then
   exit 1
 fi
 
+API_VERSION=v3
+API_HEADER="Accept: application/vnd.github.${API_VERSION}+json"
 AUTH_HEADER="Authorization: token ${TOKEN}"
 
 API=https://api.github.com/repos/
@@ -18,8 +20,11 @@ RNAME="$(echo "${REPOSITORY}" | cut -d/ -f5)"
 
 URL="${API}/${AOO}/${RNAME}/actions/runners/registration-token"
 
+echo $URL
+
 RTOKEN="$(curl -XPOST -fsSL \
   -H "${AUTH_HEADER}" \
+  -H "${API_HEADER}" \
   "${URL}" \
 | jq -r '.token')"
 
