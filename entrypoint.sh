@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Entrypoint script ..."
+
 if [ -z ${TOKEN+x} ]; then
   echo "TOKEN environment variable is not set"
   exit 1
@@ -9,6 +11,8 @@ if [ -z ${REPOSITORY+x} ]; then
   echo "REPOSITORY environment variable is not set."
   exit 1
 fi
+
+echo "Preparing ..."
 
 API_VERSION=v3
 API_HEADER="Accept: application/vnd.github.${API_VERSION}+json"
@@ -20,14 +24,17 @@ RNAME="$(echo "${REPOSITORY}" | cut -d/ -f5)"
 
 URL="${API}/${AOO}/${RNAME}/actions/runners/registration-token"
 
-echo $URL
-echo $AUTH_HEADER
+echo "Using ${URL} ..."
+echo "Obtain Token..."
 
 RTOKEN="$(curl -XPOST -fsSL \
   -H "${AUTH_HEADER}" \
   -H "${API_HEADER}" \
   "${URL}" \
 | jq -r '.token')"
+
+echo "Successful ..."
+echo "Continue with stuff ..."
 
 cd /home/docker/actions-runner
 
