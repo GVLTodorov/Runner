@@ -11,7 +11,12 @@ if [ -z ${REPOSITORY+x} ]; then
 fi
 
 AUTH_HEADER="Authorization: token ${TOKEN}"
-URL=$REPOSITORY/actions/runners/registration-token
+
+API=https://api.github.com/repos/
+AOO="$(echo "${REPOSITORY}" | cut -d/ -f4)"
+RNAME="$(echo "${REPOSITORY}" | cut -d/ -f5)"
+
+URL="${API}/${AOO}/${RNAME}/actions/runners/registration-token"
 
 RTOKEN="$(curl -XPOST -fsSL \
   -H "${AUTH_HEADER}" \
@@ -20,7 +25,7 @@ RTOKEN="$(curl -XPOST -fsSL \
 
 cd /home/docker/actions-runner
 
-./config.sh --url $REPOSITORY --token $RTOKEN --name $NAME --labels $LABEL --work ${DIR}
+./config.sh --url $REPOSITORY --token $RTOKEN --name $NAME --labels $LABEL --work $DIR
 
 cleanup() {
     echo "Removing runner..."
