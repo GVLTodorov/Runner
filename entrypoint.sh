@@ -36,9 +36,10 @@ RTOKEN="$(curl -XPOST -fsSL \
 echo "Successful ..."
 echo "Continue with stuff ..."
 
+echo "Configuring ..."
 cd /home/docker/actions-runner
 
-./config.sh --url $REPOSITORY --token $RTOKEN --name $NAME --labels $LABEL --work $DIR
+./config.sh --url "${REPOSITORY}" --token "${RTOKEN}" --name "${NAME}" --labels "${LABEL}" --work "${DIR}"
 
 cleanup() {
     echo "Removing runner..."
