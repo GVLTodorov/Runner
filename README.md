@@ -30,7 +30,7 @@ services:
        - PUID=1000
        - PGID=1000
        - REPOSITORY= https://github.com/####
-       - TOKEN= ####
+       - TOKEN= #### #PAT Token
        - NAME= Agent #optional
        - LABEL= Agent #optional
      volumes:
