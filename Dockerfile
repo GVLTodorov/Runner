@@ -1,7 +1,6 @@
 FROM ubuntu:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
-ENV RUNNER_VERSION=2.282.1
 ENV TZ=Europe/Sofia
 ENV RUNNER_ALLOW_RUNASROOT=1
 
@@ -9,7 +8,9 @@ RUN apt-get update -y && apt-get upgrade -y && useradd -m docker
 
 RUN apt-get install -y --no-install-recommends curl jq build-essential libssl-dev libffi-dev python3 python3-venv python3-dev
 
-RUN cd /home/docker && mkdir actions-runner && cd actions-runner \
+RUN RUNNER_VERSION=$(curl https://api.github.com/repos/actions/runner/tags | grep -o '"name": "[^"]*' | grep -o '[^v]*$' -m1) \
+    && echo $RUNNER_VERSION \
+    && cd /home/docker && mkdir actions-runner && cd actions-runner \
     && curl -O -L https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz \
     && tar xzf ./actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
