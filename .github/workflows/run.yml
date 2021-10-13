@@ -11,6 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run bash script
+      working-directory: .shell
       run: |
-         chmod +x ./shell/run.sh
-         ./shell/run.sh ${{ secrets.TOKEN }}
+         chmod +x ./run.sh
+         ./run.sh ${{ secrets.TOKEN }}
