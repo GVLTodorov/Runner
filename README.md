@@ -1,7 +1,7 @@
 # Runner Container
 Ubuntu Image with GitHub Action used for self-hosted runners
 
-# Auto Listen
+# Auto build and publish image
 New version will pop compares to https://github.com/actions/runner
 
 # Purpose
