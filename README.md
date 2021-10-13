@@ -1,5 +1,8 @@
-# Runner
+# Runner Container
 Ubuntu Image with GitHub Action used for self-hosted runners
+
+# Auto Listen
+New version will pop compares to https://github.com/actions/runner
 
 # Purpose
 Used to build and host your own agents for github action.
