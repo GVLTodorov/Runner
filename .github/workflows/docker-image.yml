@@ -1,0 +1,16 @@
+name: Docker Image CI
+
+on:
+  repository_dispatch:
+  schedule:
+    - cron: "0 */1 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run bash script
+      run: |
+         chmod +x ./shell/run.sh
+         ./shell/run.sh ${{ secrets.TOKEN }}
