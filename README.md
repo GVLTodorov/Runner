@@ -2,7 +2,7 @@
 Ubuntu Image with GitHub Action used for self-hosted runners
 
 # Auto build and publish image
-New version will pop compares to https://github.com/actions/runner
+New version will pop compares to https://github.com/actions/runner/releases
 
 # Purpose
 Used to build and host your own agents for github action.
