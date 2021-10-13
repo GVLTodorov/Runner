@@ -7,7 +7,6 @@ VERSION=$(curl -H "$HEADER" https://api.github.com/repos/GVLTodorov/Runner/tags 
 echo "${RUNNER_VERSION}"
 echo "${VERSION}"
 
-
 if [ "$RUNNER_VERSION" != "$VERSION" ]; then
         echo "Not Equal ..."
         echo "Making new version ..."
