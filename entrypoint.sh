@@ -38,7 +38,7 @@ echo "Successful ..."
 echo "Configuring ..."
 cd /home/docker/actions-runner
 
-./config.sh --url "${REPOSITORY}" --token "${RTOKEN}" --name "${NAME}" --labels "${LABEL}" --work "${DIR}"
+./config.sh --unattended --url "${REPOSITORY}" --token "${RTOKEN}" --name "${NAME}" --labels "${LABEL}" --work "${DIR}" --replace "${NAME}"
 
 cleanup() {
     echo "Removing runner..."
