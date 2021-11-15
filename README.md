@@ -12,7 +12,7 @@ Used to build and host your own agents for github action.
  2. [Github PAT Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
  
 # Build 
-[![Build](https://github.com/GVLTodorov/Runner/actions/workflows/release.yml/badge.svg)](https://github.com/GVLTodorov/Runner/actions/workflows/release.yml)
+[![Run](https://github.com/GVLTodorov/Runner/actions/workflows/run.yml/badge.svg)](https://github.com/GVLTodorov/Runner/actions/workflows/run.yml)
 
 # Local
 
