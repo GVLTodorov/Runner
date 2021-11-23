@@ -1,4 +1,4 @@
-# Runner Container
+# Runner Image
 Ubuntu Image with GitHub Action used for self-hosted runners
 
 # Auto build and publish image
