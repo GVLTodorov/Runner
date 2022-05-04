@@ -1,7 +1,6 @@
-```
-GitHub Runner Docker Image used for self-hosted runners.
+# GitHub Runner Docker Image used for self-hosted runners.
 New version will pop compares to https://github.com/actions/runner/releases
-```
+
 
 # Requirements
  1. GitHub Repository URL
