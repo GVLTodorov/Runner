@@ -29,8 +29,6 @@ services:
     container_name: runner
     restart: unless-stopped
     environment:
-       - PUID=1000
-       - PGID=1000
        - REPOSITORY=https://github.com/####
        - TOKEN=###PAT#Token
        - NAME=###Agent # optional
