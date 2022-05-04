@@ -1,11 +1,7 @@
-# Runner Image
-Ubuntu Image with GitHub Action used for self-hosted runners
-
-# Auto build and publish image
+```
+GitHub Runner Docker Image used for self-hosted runners.
 New version will pop compares to https://github.com/actions/runner/releases
-
-# Purpose
-Used to build and host your own agents for github action.
+```
 
 # Requirements
  1. GitHub Repository URL
