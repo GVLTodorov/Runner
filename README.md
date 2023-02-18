@@ -1,6 +1,8 @@
 # GitHub Runner Docker Image used for self-hosted runners.
-New version will pop compares to https://github.com/actions/runner/releases
 
+>This Docker image is designed to be used as a GitHub Runner for self-hosted runners. When configured correctly, it allows you to run GitHub Actions workflows on your own infrastructure, rather than relying on GitHub's cloud infrastructure. By using this Docker image, you can set up a self-hosted runner quickly and easily, with all the necessary dependencies and configurations pre-installed.
+
+>A new version of the image will be released when the GitHub Actions Runner team publishes a new release on their page, which can be found at https://github.com/actions/runner/releases. Once the new release is available, you can update your own system to use the latest version of the image.
 
 # Requirements
  1. GitHub Repository URL
@@ -32,14 +34,9 @@ services:
        - /var/run/docker.sock:/var/run/docker.sock
 ```
 
-# Result
+![image](https://user-images.githubusercontent.com/51453974/219865153-ccc03843-8f0d-48b4-bc2e-34969e7eddc2.png)
 
-![image](https://user-images.githubusercontent.com/51453974/131748931-e7c32263-e146-4bee-85dc-7db6e53757c2.png)
-
-# YML Example
-```
-runs-on: self-hosted
-```
+> runs-on: self-hosted
 
 ```
 name: Default
