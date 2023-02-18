@@ -1,0 +1,17 @@
+name: Run
+
+on:
+  repository_dispatch:
+  schedule:
+    - cron: "0 */12 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run bash script
+      working-directory: .shell
+      run: |
+         chmod +x ./run.sh
+         ./run.sh ${{ secrets.TOKEN }}
