@@ -1,4 +1,4 @@
-# GitHub Runner Docker Image used for self-hosted runners.
+# GitHub Runner Docker Image.
 
 >This Docker image is designed to be used as a GitHub Runner for self-hosted runners. When configured correctly, it allows you to run GitHub Actions workflows on your own infrastructure, rather than relying on GitHub's cloud infrastructure. By using this Docker image, you can set up a self-hosted runner quickly and easily, with all the necessary dependencies and configurations pre-installed.
 
